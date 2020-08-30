@@ -1,21 +1,49 @@
+.app{
+  justify-content: center;
+}
+
 .picture-list {
   list-style-type: none;
   display: flex;
   flex-flow: wrap;
-
- 
+  justify-content: center;
+  /* width: 90%; */
+  
 }
 .pictures{
- 
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 700px;
 }
 .picture-card{
   display: flex;
   flex-direction: column;
+  margin: 30px;
+  width: 700px;
+  height: auto;
 
 }
 .favorites-list{
   display: flex;
-  flex-flow: wrap;
+  flex-flow: column;
+  flex-direction: row;
   list-style-type: none;
+  justify-content: space-evenly;
   align-items: center;
+  min-height: 300px;
+  border: 2px solid gainsboro;
+  background-color: gainsboro;
+  margin: 30px;
+}
+.delete-button{
+  background-color: white;
+  border: 2px solid gainsboro;
+}
+.section-title{
+  text-align: center;
+}
+.page-name{
+  text-align: center;
+  
 }

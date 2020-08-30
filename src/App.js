@@ -43,10 +43,10 @@ export default class App extends React.Component {
   }
   render() {
   return (
-    <div className="App">
-      <h1>Favorites</h1>
+    <div className="app">
+     <h1 className='page-name'>Picture Board</h1>
+      <h1 className='section-title'>My Favorites</h1>
      <FavoritesList favorites={this.state.favorites} removeFavorite={this.removeFavorite}/>
-     <h1>Picture Board</h1>
      <PictureSection 
         pictures={this.state.pictures} 
         addFavorite={this.addFavorite} 
