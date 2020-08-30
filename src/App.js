@@ -1,26 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FavoritesList from './FavoritesList';
+import PictureSection from './PictureSection';
 
-function App() {
+const baseUrl = 'http://localhost:3000/pictures/'
+
+export default class App extends React.Component {
+  
+  state = {
+    pictures: [],
+    favorites: []
+  }
+
+  componentDidMount() {
+    fetch(baseUrl)
+      .then(response => response.json())
+      .then(response => this.setState({pictures: response}))
+  }
+
+  addFavorite = (picture) => {
+    if(!this.state.favorites.includes(picture)){
+      this.setState({
+        favorites: [...this.state.favorites, picture]
+      })
+    }
+  }
+  removeFavorite = (picture) => {
+    let filtered = this.state.favorites.filter(favorite => favorite !== picture)
+      this.setState({
+        favorites: filtered
+      })
+  }
+  permanentDelete = (p) => {
+    let pictures = this.state.pictures.filter(picture => picture.id !== p.id)
+    this.removeFavorite(p)
+    this.setState({
+      pictures: pictures
+    })
+    fetch(baseUrl + p.id, {
+      method: 'DELETE'
+    })
+  }
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Favorites</h1>
+     <FavoritesList favorites={this.state.favorites} removeFavorite={this.removeFavorite}/>
+     <h1>Picture Board</h1>
+     <PictureSection 
+        pictures={this.state.pictures} 
+        addFavorite={this.addFavorite} 
+        removePicture={this.permanentDelete}/>
     </div>
   );
 }
+}
 
-export default App;
