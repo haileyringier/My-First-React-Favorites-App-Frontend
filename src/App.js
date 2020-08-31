@@ -32,6 +32,16 @@ export default class App extends React.Component {
         favorites: filtered
       })
   }
+  addPicture = (picture) => {
+    this.setState({
+      pictures: [...this.state.pictures, picture]
+    })
+    fetch(baseUrl, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(picture)
+    })
+  }
   permanentDelete = (p) => {
     let pictures = this.state.pictures.filter(picture => picture.id !== p.id)
     this.removeFavorite(p)
@@ -48,7 +58,7 @@ export default class App extends React.Component {
      <h1 className='page-name'>Picture Board</h1>
       <h1 className='section-title'>My Favorites</h1>
      <FavoritesList favorites={this.state.favorites} removeFavorite={this.removeFavorite}/>
-     <PictureForm />
+     <PictureForm addPicture={this.addPicture} />
      <PictureSection 
         pictures={this.state.pictures} 
         addFavorite={this.addFavorite} 
