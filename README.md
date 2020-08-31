@@ -1,5 +1,5 @@
 ## My First React Favorites App
-My first application using REact to set and update sate, featuring a picture board that allows a user to add pictures to their favorites section, delete and add pictures using a controller form with data that persists.
+My first application using React to set and update sate, featuring a picture board that allows a user to add pictures to their favorites section, delete and add pictures using a controller form with data that persists.
 
 The backend of this application uses Ruby on Rails and is located [here](https://github.com/haileyringier/My-First-React-Favorite-App-Backend).
 
