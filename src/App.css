@@ -1,5 +1,6 @@
 .app{
   justify-content: center;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .picture-list {
@@ -7,6 +8,8 @@
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  margin: 10px;
+  padding: 0px;
   /* width: 90%; */
   
 }
@@ -35,15 +38,47 @@
   border: 2px solid gainsboro;
   background-color: gainsboro;
   margin: 30px;
+  margin-top: 10px;
 }
 .delete-button{
-  background-color: white;
+  background-color:darkslategray;
+  color: gainsboro;
   border: 2px solid gainsboro;
+  height: 30px;
 }
 .section-title{
   text-align: center;
+  color: darkslategray;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 .page-name{
   text-align: center;
+  color: darkslategray;
+  font-size: 38px;
   
+}
+.picture-form{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+input{
+  background-color: gainsboro;
+  height: 20px;
+  margin: 10px;
+  width: 200px;
+}
+.submit-button{
+  width: 100px;
+  height: 30px;
+  background-color: darkslategray;
+  color: gainsboro;
+  font-weight: bold;
+}
+.url-input{
+  width: 250px;
+}
+.title{
+  font-size: 25px;
 }

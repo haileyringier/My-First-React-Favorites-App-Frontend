@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import FavoritesList from './FavoritesList';
 import PictureSection from './PictureSection';
+import PictureForm from './PictureForm';
 
 const baseUrl = 'http://localhost:3000/pictures/'
 
@@ -47,6 +48,7 @@ export default class App extends React.Component {
      <h1 className='page-name'>Picture Board</h1>
       <h1 className='section-title'>My Favorites</h1>
      <FavoritesList favorites={this.state.favorites} removeFavorite={this.removeFavorite}/>
+     <PictureForm />
      <PictureSection 
         pictures={this.state.pictures} 
         addFavorite={this.addFavorite} 

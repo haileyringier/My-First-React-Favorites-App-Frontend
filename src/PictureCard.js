@@ -13,7 +13,7 @@ export default function PictureCard(props){
     }
     return(
         <li className='picture-card' onClick={handleClick}>
-            <p>{props.picture.title}</p>
+            <p className="title">{props.picture.title}</p>
             <img className='pictures' src={props.picture.url} alt=""></img>
             {!props.favorite ? (
                 <button className='delete-button' onClick={deleteClick}>Remove Picture</button>) 
